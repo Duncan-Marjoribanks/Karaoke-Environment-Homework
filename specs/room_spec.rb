@@ -10,11 +10,11 @@ class RoomTest < MiniTest::Test
   def setup
     @room_1 = Room.new("Rock and Roll room", 4)
     @song_1 = Song.new("Nevermind")
-    @guest_1 = Guest.new("Barney")
-    @guest_2 = Guest.new("Timmy")
-    @guest_3 = Guest.new("Jane")
-    @guest_4 = Guest.new("Belinda")
-    @guest_5 = Guest.new("Norman")
+    @guest_1 = Guest.new("Barney", 20)
+    @guest_2 = Guest.new("Timmy", 40)
+    @guest_3 = Guest.new("Jane", 2)
+    @guest_4 = Guest.new("Belinda", 30)
+    @guest_5 = Guest.new("Norman", 45)
   end
 
 
@@ -54,5 +54,6 @@ def test_too_many_people
   result = @room_1.population.count
   assert_equal(4, result)
 end
+
 
 end
