@@ -20,8 +20,8 @@ class RoomTest < MiniTest::Test
   end
 
   def test_can_play_song
-    result = @song_1.name
-    assert_equal("Nevermind", result)
+    result = @room_1.play_song(@song_1)
+    assert_equal("Nevermind", result.name)
   end
 
   def test_has_space_for_guests
@@ -31,8 +31,14 @@ class RoomTest < MiniTest::Test
 
   def test_can_add_guests_to_room
     result = @room_1.add_guest_to_room(@guest_1)
-    assert_equal(1, @room_1.population.length)
+    assert_equal(1, @room_1.population.count)
   end
 
+def test_can_remove_guest_from_room
+  room_2 = Room.new("Disco room")
+  room_2.add_guest_to_room(@guest_1)
+  result = room_2.remove_guest_from_room(@guest_1)
+  assert_equal(0, room_2.population.count)
+end
 
 end
