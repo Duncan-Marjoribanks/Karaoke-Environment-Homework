@@ -12,7 +12,8 @@ class Room
 
 
   def add_guest_to_room(guest)
-    population << guest if population.count < max_population
+    population << guest if population.count < max_population && guest.wallet >=10
+    guest.wallet -=10
   end
 
   def remove_guest_from_room(guest)

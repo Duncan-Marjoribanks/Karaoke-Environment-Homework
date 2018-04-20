@@ -14,7 +14,8 @@ class RoomTest < MiniTest::Test
     @guest_2 = Guest.new("Timmy", 40)
     @guest_3 = Guest.new("Jane", 2)
     @guest_4 = Guest.new("Belinda", 30)
-    @guest_5 = Guest.new("Norman", 45)
+    @guest_5 = Guest.new("Norman", 5)
+    @guest_6 = Guest.new("Suzanna", 1)
   end
 
 
@@ -51,8 +52,9 @@ def test_too_many_people
   @room_1.add_guest_to_room(@guest_3)
   @room_1.add_guest_to_room(@guest_4)
   @room_1.add_guest_to_room(@guest_5)
+  @room_1.add_guest_to_room(@guest_6)
   result = @room_1.population.count
-  assert_equal(4, result)
+  assert_equal(3, result)
 end
 
 
