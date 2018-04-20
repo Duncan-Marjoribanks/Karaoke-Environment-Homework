@@ -15,4 +15,8 @@ class GuestTest < MiniTest::Test
     assert_equal("Mindy", result)
   end
 
+def test_can_play_song
+result
+end
+
 end
