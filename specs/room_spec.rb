@@ -8,7 +8,7 @@ require_relative("../guest")
 class RoomTest < MiniTest::Test
 
   def setup
-    @room_1 = Room.new("Rock and Roll room", 4)
+    @room_1 = Room.new("Rock and Roll room", 4, 10)
     @song_1 = Song.new("Nevermind")
     @guest_1 = Guest.new("Barney", 20)
     @guest_2 = Guest.new("Timmy", 40)
@@ -40,7 +40,7 @@ class RoomTest < MiniTest::Test
   end
 
 def test_can_remove_guest_from_room
-  room_2 = Room.new("Disco room", 4)
+  room_2 = Room.new("Disco room", 4, 10)
   room_2.add_guest_to_room(@guest_1)
   result = room_2.remove_guest_from_room(@guest_1)
   assert_equal(0, room_2.population.count)
