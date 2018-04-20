@@ -9,14 +9,11 @@ class GuestTest < MiniTest::Test
     @guest_1 = Guest.new("Mindy")
   end
 
-
   def test_has_name
     result = @guest_1.name
     assert_equal("Mindy", result)
   end
 
-def test_can_play_song
-result
-end
+
 
 end

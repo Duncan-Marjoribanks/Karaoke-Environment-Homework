@@ -22,4 +22,9 @@ class RoomTest < MiniTest::Test
     assert_equal("Nevermind", result)
   end
 
+  def test_has_space_for_guests
+    result = @room_1.population
+    assert_equal([], result)
+  end
+
 end

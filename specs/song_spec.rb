@@ -14,4 +14,6 @@ class SongTest < MiniTest::Test
     assert_equal("Welcome to the Jungle", result)
   end
 
+  
+
 end
