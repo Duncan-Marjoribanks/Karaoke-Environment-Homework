@@ -4,14 +4,13 @@ require_relative("../room")
 require_relative("../song")
 require_relative("../guest")
 
-
 class RoomTest < MiniTest::Test
 
   def setup
     @room_1 = Room.new("Rock and Roll room", 4, 10, 100)
     @song_1 = Song.new("Nevermind")
     @guest_1 = Guest.new("Barney", 20, "Nevermind")
-    @guest_2 = Guest.new("Timmy", 40, "Welcome to the Jungle")
+    @guest_2 = Guest.new("Timmy", 40, @song_1)
     @guest_3 = Guest.new("Jane", 2, "Waterloo")
     @guest_4 = Guest.new("Belinda", 30, "Smack my bitch up")
     @guest_5 = Guest.new("Norman", 5, "Happy birthday")

@@ -13,14 +13,16 @@ class Room
   end
 
   def play_song(song)
-    song_playing = song
+    @song_playing = song
   end
 
   def add_guest_to_room(room, guest)
     population << guest if population.count < max_population && guest.wallet >= cost
+
     guest.wallet -= cost
+
     room.till += cost
-    p "Woohoo!" if song_playing == guest.fav_song
+    p "Woohoo! That's my favorite song!" if room.song_playing == guest.fav_song
   end
 
   def remove_guest_from_room(guest)
